@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sentiment Analyzer</h1>
+        <p class="subtitle">Analyze the sentiment of your text with AI</p>
+
+        <div class="input-section">
+            <textarea 
+                id="textInput" 
+                placeholder="Enter your text here to analyze its sentiment..."
+                rows="4"
+            ></textarea>
+            <button id="analyzeBtn" onclick="analyzeSentiment()">
+                Analyze Sentiment
+            </button>
+        </div>
+
+        <div class="result-section" id="resultSection" style="display: none;">
+            <h3>Analysis Result</h3>
+            <div class="sentiment-badge" id="sentimentBadge"></div>
+            <div class="confidence-score" id="confidenceScore"></div>
+            <div class="json-output" id="jsonOutput"></div>
+        </div>
+
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Analyzing sentiment...</p>
+        </div>
+
+        <div class="error" id="error" style="display: none;">
+            <p id="errorMessage"></p>
+        </div>
+
+        <footer>
+            <p>Powered by DistilBERT • Built with FastAPI</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
